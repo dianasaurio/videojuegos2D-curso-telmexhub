@@ -10,6 +10,7 @@ Q.animations("animacionesGoomba", {
 		frames: [3],
 		rate: 1 / 2,
 		loop: false,
+		trigger: "destruir"
 	}
 	
 });
@@ -37,12 +38,8 @@ Q.Sprite.extend("Goomba",{
 		if(colision.obj.isA("Jugador")){
 			//goomba muere
 			this.play("aplastar");
-			this.destroy();
+			//this.destroy();
 		}
 	},
-	/*destruir: function(){
-		this.destroy();
-	}*/
-	//esta funcion se repite continuamente (Game Loop)
-	
+
 });
