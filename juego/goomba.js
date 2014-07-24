@@ -5,7 +5,13 @@ Q.animations("animacionesGoomba", {
 		frames: [0, 1],
 		rate: 1 / 2, //van a pasar 6 frames por segundo
 		loop: true
+	},
+	aplastar: {
+		frames: [3],
+		rate: 1 / 2,
+		loop: false,
 	}
+	
 });
 
 Q.Sprite.extend("Goomba",{
@@ -19,7 +25,24 @@ Q.Sprite.extend("Goomba",{
 		this.add("2d, aiBounce, animation");
 		//La animacion caminar se ejecuta siempre
 		this.play("caminar");
-	}
+		//vamos a escuchar las colisiones por arriba
+		this.on("bump.top", this, "aplasta");
+		//trigger
+		this.on("destruir", function(){
+			this.destroy();
+		});
+	},
+	aplasta: function(colision){
+		//revisar si colisioné con Mario
+		if(colision.obj.isA("Jugador")){
+			//goomba muere
+			this.play("aplastar");
+			this.destroy();
+		}
+	},
+	/*destruir: function(){
+		this.destroy();
+	}*/
 	//esta funcion se repite continuamente (Game Loop)
 	
 });
