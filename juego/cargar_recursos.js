@@ -11,5 +11,7 @@ Q.loadTMX(recursos, function(){
 	Q.compileSheets("mosaicos_enemigos_32x32.png","enemigosBajos.json");
 	Q.compileSheets("mosaicos_enemigos_32x46.png","tortuga.json");
 	//ejecutamos la escena
+	Q.stageScene("score", 1);
 	Q.stageScene("mundo1");
+	
 });
