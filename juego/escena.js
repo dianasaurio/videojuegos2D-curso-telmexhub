@@ -20,4 +20,8 @@ Q.scene("mundo1", function(stage){
 		minY: 0,
 		maxY: capaFondo.p.h
 	});
+	
+	Q.audio.play("tema_superficie.mp3", {
+		loop: true
+	});
 } );

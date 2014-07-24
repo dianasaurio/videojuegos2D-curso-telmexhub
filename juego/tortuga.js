@@ -32,6 +32,8 @@ Q.Sprite.extend("Tortuga",{
 		if(colision.obj.isA("Jugador")){
 			//mario rebota
 			colision.obj.p.vy = -500;
+			//suena patada.mp3
+			Q.audio.play("patada.mp3");
 			//si la tortuga no es concha
 			if(!this.p.esConcha){
 				//cambiar el sheet por el de enemigos bajos
