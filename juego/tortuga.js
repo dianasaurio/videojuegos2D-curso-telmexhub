@@ -20,7 +20,10 @@ Q.Sprite.extend("Tortuga",{
 			sheet: "tortuga",
 			frame: 0,
 			vx:100,
-			esConcha: false
+			//definimos nuestras propiedades
+			esConcha: false,
+			enemigo: true
+			
 		});
 		this.add("2d, aiBounce, animation");
 		this.play("caminar");
