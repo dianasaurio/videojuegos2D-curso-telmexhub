@@ -14,4 +14,13 @@ Q.loadTMX(recursos, function(){
 	Q.stageScene("score", 1);
 	Q.stageScene("mundo1");
 	
+}, {
+	progressCallback: function(leidos, totales){
+		var porcentaje = Math.floor((leidos / totales)*100);
+		$("#barra").css("width", porcentaje + "%");
+		
+		if(leidos === totales){
+			$("#contenedor-barra").remove();
+		}
+	}
 });
