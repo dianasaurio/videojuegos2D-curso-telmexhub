@@ -21,6 +21,9 @@ Q.loadTMX(recursos, function() {
 
 		if (leidos === totales) {
 			$("#contenedor-barra").remove();
+			
+			//mostramos el boton de pausa
+			$("#contenedor-boton").show();
 		}
 	}
 });
