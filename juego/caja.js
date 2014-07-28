@@ -56,7 +56,12 @@ Q.Sprite.extend("Caja", {//debe ser el mismo que le das al sprite en el mapa
 				//una vez insertado el hongo, hacemos animación tween
 				hongo.animate({
 					y: this.p.y - 35
-				}, 0.5);
+				}, 0.5,{
+					callback: function(){
+						this.p.sensor = false;
+						this.add("2d");
+					}
+				});
 			}
 		});
 	}
