@@ -60,6 +60,9 @@ Q.Sprite.extend("Jugador", {
 				//activar la escena previa (mundo1)
 				this.p.escena_previa.start();
 				
+				//asignar nuevas coordenadas
+				this.p.x = 1000;
+				this.p.y = 0;
 				//el atributo stage de Mario debe ser ahora mundo1
 				this.stage = this.p.escena_previa;	
 			}

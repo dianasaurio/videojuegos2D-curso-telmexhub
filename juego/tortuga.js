@@ -1,3 +1,18 @@
+//--------------------Declaración de un componente (hace que la tortuga salte)------------------------------
+Q.component("saltarin",{
+	added: function(){
+		//se ejecuta cuando este componente se agrega a un sprite
+		//los componentes nos permiten modificar el game loop del sprite y sus propiedades
+		this.entity.on("step", this, "saltar");//se refiere al sprite al que se le aplica el componente
+	},
+	saltar: function(){
+		//checamos si su velocidad en el eje y es cero
+		if(this.entity.p.vy === 0){
+			this.entity.p.vy = -400;
+		}
+	}
+});
+
 //Definir animaciones
 Q.animations("animacionesTortuga",{
 	caminar: {
@@ -25,7 +40,7 @@ Q.Sprite.extend("Tortuga",{
 			enemigo: true
 			
 		});
-		this.add("2d, aiBounce, animation");
+		this.add("2d, aiBounce, animation, saltarin");
 		this.play("caminar");
 		//escuchar el evento bump.top
 		this.on("bump.top", this, "aConcha");
