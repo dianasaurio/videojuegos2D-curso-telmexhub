@@ -25,7 +25,7 @@ Q.Sprite.extend("Goomba",{
 			//definimos nuestras propiedades
 			enemigo: true
 		});
-		this.add("2d, aiBounce, animation, saltarin");
+		this.add("2d, aiBounce, animation");
 		//La animacion caminar se ejecuta siempre
 		this.play("caminar");
 		//vamos a escuchar las colisiones por arriba
