@@ -41,6 +41,31 @@ Q.Sprite.extend("Jugador", {
 			estaVivo : true
 		});
 		this.add("2d, platformerControls, animation, tween");
+		//Escucho colisiones con la tubería
+		this.on("bump.bottom", function(colision){
+			//revisar si colisione con tuberia entrada
+			if(colision.obj.isA("TuberiaEntrada") && Q.inputs["down"]){
+				//cambiamos de escena
+				Q.audio.stop("tema_superficie.mp3");
+				Q.stageScene("mundo1Subterraneo", 2);
+			}
+		});
+		
+		//escuchar colision por la derecha con la tuberia de salida
+		this.on("bump.right",function(colision){
+			if(colision.obj.isA("TuberiaSalida") && Q.inputs["right"]){
+				//llamar al mundo original
+				//darle stop al mundo subterraneo
+				this.stage.stop();
+				//activar la escena previa (mundo1)
+				this.p.escena_previa.start();
+				
+				//el atributo stage de Mario debe ser ahora mundo1
+				this.stage = this.p.escena_previa;	
+			}
+		});
+		
+		
 		//Escuchamos el evento casiMuerto que detona el trigger de la animacion morir
 		this.on("casiMuerto", this, function(){
 			
