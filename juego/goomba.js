@@ -23,7 +23,8 @@ Q.Sprite.extend("Goomba",{
 			frame: 0,
 			vx:130,
 			//definimos nuestras propiedades
-			enemigo: true
+			enemigo: true,
+			z: 1
 		});
 		this.add("2d, aiBounce, animation");
 		//La animacion caminar se ejecuta siempre

@@ -18,7 +18,8 @@ Q.Sprite.extend("HongoVida", {//debe ser el mismo que le das al sprite en el map
 			frame : 1,
 			vx: 150,
 			//deshbilitamos temporalmente las colisiones
-			sensor: true
+			sensor: true,
+			z: 1
 		});
 		this.add("animation, tween, aiBounce");
 		
@@ -38,7 +39,8 @@ Q.Sprite.extend("Caja", {//debe ser el mismo que le das al sprite en el mapa
 			sprite: "animacionesCaja",
 			sheet : "objetos",
 			frame : 3,
-			gravity : 0//deshabilitamos la gravedad
+			gravity : 0,//deshabilitamos la gravedad
+			z: 10//si z es mayor se pone encima de los objetos que tienen un valor menor de z
 		});
 		this.add("2d, animation");
 		this.play("brillar");

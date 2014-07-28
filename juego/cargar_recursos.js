@@ -21,7 +21,9 @@ Q.loadTMX(recursos, function() {
 	
 	//ejecutamos la escena
 	Q.stageScene("score", 1);
-	Q.stageScene("mundo1");
+	Q.stageScene("mundo1",{
+		sort: true
+	});
 
 }, {
 	progressCallback : function(leidos, totales) {

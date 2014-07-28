@@ -37,7 +37,8 @@ Q.Sprite.extend("Tortuga",{
 			vx:100,
 			//definimos nuestras propiedades
 			esConcha: false,
-			enemigo: true
+			enemigo: true,
+			z: 1
 			
 		});
 		this.add("2d, aiBounce, animation, saltarin");

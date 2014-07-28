@@ -38,7 +38,8 @@ Q.Sprite.extend("Jugador", {
 			frame : 1,
 			jumpSpeed : -800,
 			speed : 150,
-			estaVivo : true
+			estaVivo : true,
+			z: 1
 		});
 		this.add("2d, platformerControls, animation, tween");
 		//Escucho colisiones con la tubería
